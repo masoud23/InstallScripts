@@ -194,7 +194,7 @@ docker rm fabric.docker.elasticsearch || echo 'no container to remove'
 echo "removing docker image"
 docker rmi healthcatalyst/fabric.docker.elasticsearch || echo 'no image to remove'
 echo "pulling latest docker image from repo"
-docker pull healthcatalyst/fabric.docker.elasticsearch
+docker pull healthcatalyst/fabric.docker.elasticsearch:UpgradeTov5-5-1
 echo "starting docker container with new image"
 set -x
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
