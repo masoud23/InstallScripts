@@ -3,7 +3,7 @@ set -e
 #
 # This script is meant for quick & easy install via:
 #   'curl -sSL https://healthcatalyst.github.io/InstallScripts/installelasticsearch.txt | sh -s <ip1> <ip2> <ip3>'
-#   'curl -sSL https://healthcatalyst.github.io/InstallScripts/installelasticsearch.txt | sh -s 10.4.0.5 10.4.0.6 10.4.0.7 ssl'
+#   'curl -sSL https://raw.githubusercontent.com/masoud23/InstallScripts/master/installelasticsearch.txt | sh -s 10.4.0.5 10.4.0.6 10.4.0.7 ssl'
 # or:
 #   'wget -qO- https://healthcatalyst.github.io/InstallScripts/installelasticsearch.txt | sh -s <ip1> <ip2> <ip3>'
 #
@@ -131,7 +131,7 @@ echo "==== Creating update script ===="
 
 
 echo "#!/bin/sh" > $installscript
-echo "curl -sSL https://healthcatalyst.github.io/InstallScripts/installelasticsearch.txt | sh -s $@" >> $installscript
+echo "curl -sSL https://raw.githubusercontent.com/masoud23/InstallScripts/master/installelasticsearch.txt | sh -s $@" >> $installscript
 chmod +x $installscript
 
 if [[ ! -e "$HOME/bin/$installscriptfile" ]]; then 
