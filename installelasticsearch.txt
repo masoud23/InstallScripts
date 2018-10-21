@@ -179,20 +179,13 @@ fi
 
 volumeParam="-v $data1File:/usr/share/elasticsearch/data1 -v $data2File:/usr/share/elasticsearch/data2"
 
-# delete old versions
-echo "stopping existing docker container"
-docker stop dockerelasticsearch || echo 'no container to stop'
-echo "removing docker container"
-docker rm dockerelasticsearch || echo 'no container to remove'
-echo "removing docker image"
-docker rmi imranq2/dockerelasticsearch || echo 'no image to remove'
 
 echo "stopping existing docker container"
-docker stop fabric.docker.elasticsearch || echo 'no container to stop'
+docker stop elasticsearch || echo 'no container to stop'
 echo "removing docker container"
-docker rm fabric.docker.elasticsearch || echo 'no container to remove'
+docker rm elasticsearch || echo 'no container to remove'
 echo "removing docker image"
-docker rmi healthcatalyst/fabric.docker.elasticsearch || echo 'no image to remove'
+docker rmi elasticsearch || echo 'no image to remove'
 echo "pulling latest docker image from repo"
 docker pull elasticsearch:5.2
 echo "starting docker container with new image"
